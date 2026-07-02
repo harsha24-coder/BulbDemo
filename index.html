@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Second HTML page</title>
+    <script>
+        function bulbon(){
+            document.getElementById("bulb").src="bulbg.png";
+            
+        }
+        function bulboff(){
+            let x=document.getElementById("bulb");
+            x.src="bulb.png";
+        }
+        function validate(){
+            let mno=document.getElementById('mobilenumber').value;
+            
+            let msg= document.getElementById("mobileMsg");
+
+            let pattern =/^[0-9]{10}$/;
+
+            if (pattern.test(mno)) {
+                msg.innerHTML="Valid Mobile";
+                msg.style.color="green";
+            } else {
+                msg.innerHTML="Invalid Mobile (10 digits only)";
+                msg.style.color="red";
+            }
+        }
+
+        function numbervalidate(){
+            let num=document.getElementById("number").value;
+            let err=document.getElementById("numvalidate");
+             
+            let pattern=/^[0-9]$/;
+            if(pattern.test(num)){
+                err.innerHTML="Valid number";
+                err.style.color='green';
+            }else{
+                err.innerHTML="Invalid number(0-9)";
+                err.style.color='red';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Bulb Demo</h1>
+    <p>Click on or off Switch to activite and decativate Bulb</p>
+    
+    <button onclick="bulbon()">Turn on the Bulb</button>
+
+    <img src="bulb.png" id="bulb" alt="Bulb image" height="200" width="180">
+    
+    <button onclick="bulboff()">Turn off the Bulb</button>
+
+    <p>Sample Test to be changed</p>
+
+    <input type="text" id="mobilenumber" placeholder="Enter Your number" required>
+
+    <button type="clickme" id="validate" onclick="validate()">Validate</button>
+     <span id="mobileMsg"></span>
+
+    <button type="clickme" id="clear">Clear</button><br><br>
+
+    <input type="text" id="number" placeholder="Enter number between 1 to 10" requried>
+
+    <button type="clickme"  onclick="numbervalidate()">validate</button><br><br>
+    <span id="numvalidate"></span><br><br>
+    <textarea type="text" name="address" placeholder="address"></textarea>
+
+    <button type="submit" >clear</button><br>
+
+    <button type="clickme" >submit</button>
+    
+    <p>Tis paragraph content will be cleared</p>
+</body>
+
+</html>
